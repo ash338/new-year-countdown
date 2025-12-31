@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year 2026 Countdown</title>
+    <meta name="description" content="Counting every second together until 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="main-container" class="container fade-in">
+        <header>
+            <h1>New Year 2026 Countdown</h1>
+            <p class="subtitle">Counting every second together</p>
+        </header>
+
+        <div id="countdown" class="countdown-grid">
+            <div class="time-box">
+                <span id="days" class="number">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="time-box">
+                <span id="hours" class="number">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="time-box">
+                <span id="minutes" class="number">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="time-box">
+                <span id="seconds" class="number">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+
+        <div id="celebration" class="celebration hidden">
+            <h2>Happy New Year 2026 🎆</h2>
+            <p>Here's to a beautiful new chapter!</p>
+        </div>
+
+        <button id="music-toggle" class="music-toggle" aria-label="Toggle Music">
+            🎵
+        </button>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-widget closed">
+        <div class="chat-header">
+            <div class="chat-title-group">
+                <span>Live Chat</span>
+                <span id="chat-status" class="status-dot offline" title="Disconnected">●</span>
+            </div>
+            <button id="toggle-chat-btn" class="close-btn">_</button>
+        </div>
+        <div class="chat-body" id="chat-messages">
+            <!-- Messages will appear here -->
+            <div class="message system">Welcome to the chat!</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Say something..." autocomplete="off">
+            <button id="send-btn">➤</button>
+        </div>
+    </div>
+    <button id="open-chat-fab" class="chat-fab">💬</button>
+
+    <!-- Audio Tracks -->
+    <!-- Place 'countdown-music.mp3' in the same folder -->
+    <audio id="countdown-audio" loop>
+        <source src="countdown-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Place 'celebration-music.mp3' in the same folder -->
+    <audio id="celebration-audio">
+        <source src="celebration-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Firebase SDK (Compat for easier local testing) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
